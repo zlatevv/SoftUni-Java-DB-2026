@@ -64,10 +64,11 @@ create view `v_employees_salaries` as
 select first_name, last_name, salary from employees; 
 
 -- 16. Create View Employees with Job Titles 
-create view v_employees_job_titles as
-select 
-concat(first_name, " ", IFNULL(middle_name, ''), " ", last_name) as full_name,
-job_title from employees;
+CREATE VIEW v_employees_job_titles AS
+SELECT
+    CONCAT_WS(' ', first_name, middle_name, last_name) AS full_name,
+    job_title
+FROM employees;
 
 -- 17.  Distinct Job Titles 
 select distinct(job_title) from employees
@@ -86,10 +87,8 @@ limit 7;
 -- 20. Increase Salaries 
 update employees
 set salary = salary * 1.12
-where  department_id not in (1, 2, 4, 11);
-
+where department_id in (1, 2, 4, 11);
 select salary from employees;
-
 
 -- Part II – Queries for Geography Database 
 use geography;
