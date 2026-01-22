@@ -4,23 +4,22 @@ use table_relations_exercise;
 -- 1. One-To-One Relationship
 create table passports(
 	passport_id int primary key auto_increment,
-    passport_number varchar(10) unique
+    passport_number varchar(50) not null unique
 );
-
-create table people (
-	person_id int primary key auto_increment,
-    first_name varchar(20),
-    salary decimal(10, 2),
-    passport_id int,
-    
-    constraint foreign key (passport_id)
-		references passports(passport_id)
-);
-
 insert into passports (passport_id, passport_number) values
 (101, 'N34FG21B'),
 (102, 'K65LO4R7'),
 (103, 'ZE657QP2');
+
+create table people (
+	person_id int primary key auto_increment,
+    first_name varchar(100),
+    salary decimal(12, 2),
+    passport_id int not null unique,
+    
+    constraint foreign key (passport_id)
+		references passports(passport_id)
+);
 
 insert into people (person_id, first_name, salary, passport_id) values 
 (1, 'Roberto', 43300.00, 102),
