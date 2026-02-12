@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class App {
-    static void main() throws SQLException {
+    public static void main(String[] args) throws SQLException {
         Connection conn = DBConnection.getConnection();
         PreparedStatement preparedStatement = conn.prepareStatement(""" 
                     select v.name, count(mv.minion_id) as minion_count from villains v
