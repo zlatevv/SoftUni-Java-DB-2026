@@ -1,6 +1,7 @@
-.env
+# Ignore database credentials
+config.properties
 *.class
 out/
 bin/
 .idea/
-DBConnection.java
+.env
