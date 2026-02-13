@@ -6,9 +6,8 @@ import java.sql.SQLException;
 
 public class DBConnection {
     private static final String URL = "jdbc:mysql://localhost:3306/minions_db";
-    private static final String USER = System.getenv("DB_USER");
 
     public static Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(URL, USER, System.getenv("DB_PASSWORD"));
+        return DriverManager.getConnection(URL, "root", "1234");
     }
 }
