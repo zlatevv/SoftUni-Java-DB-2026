@@ -5,9 +5,15 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBConnection {
-    private static final String URL = "jdbc:mysql://localhost:3306/minions_db";
+    private static Connection connection;
 
     public static Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(URL, "root", "1234");
+        if (connection == null || connection.isClosed()) {
+            String url = ConfigLoader.get("db.url");
+            String user = ConfigLoader.get("db.user");
+            String password = ConfigLoader.get("db.password");
+            connection = DriverManager.getConnection(url, user, password);
+        }
+        return connection;
     }
 }
