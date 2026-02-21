@@ -5,3 +5,4 @@ out/
 bin/
 .idea/
 .env
+persistence.xml
