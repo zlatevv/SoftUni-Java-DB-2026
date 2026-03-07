@@ -6,6 +6,8 @@
       <list>
         <option value="$PROJECT_DIR$/02-ORM-Fundamentals/pom.xml" />
         <option value="$PROJECT_DIR$/student-manager/pom.xml" />
+        <option value="$PROJECT_DIR$/demo/pom.xml" />
+        <option value="$PROJECT_DIR$/account-system/pom.xml" />
       </list>
     </option>
   </component>
