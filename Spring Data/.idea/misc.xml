@@ -2,6 +2,7 @@
 <project version="4">
   <component name="EntryPointsManager">
     <writeAnnotations>
+      <writeAnnotation name="jakarta.persistence.Column" />
       <writeAnnotation name="jakarta.persistence.OneToMany" />
     </writeAnnotations>
   </component>
@@ -14,6 +15,7 @@
         <option value="$PROJECT_DIR$/demo/pom.xml" />
         <option value="$PROJECT_DIR$/account-system/pom.xml" />
         <option value="$PROJECT_DIR$/bookshop-system/pom.xml" />
+        <option value="$PROJECT_DIR$/user-system/pom.xml" />
       </list>
     </option>
   </component>
